@@ -202,7 +202,7 @@ public class Navigation {
                     sciene.repaint();
 //             new Sciene1();
                 }
-
+                ms.interrupt();
             }
 
             @Override

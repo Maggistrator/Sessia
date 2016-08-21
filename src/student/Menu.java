@@ -24,6 +24,7 @@ public class Menu {
     static int next;
     static MakeSound ms = new MakeSound();
 
+    
     public static void main(String[] args) {
         JFrame entry = new JFrame("Сессия: Месть Завуча");
         try {

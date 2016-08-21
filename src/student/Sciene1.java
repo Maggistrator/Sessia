@@ -229,6 +229,7 @@ public class Sciene1 {
                     }
                     sciene.setVisible(false);
                     sciene.repaint();
+                    Navigation.points++;
                     new Navigation();
                 }
                 pane.repaint();

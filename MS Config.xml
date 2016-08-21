@@ -13,7 +13,7 @@
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon></icon>
+  <icon>C:\Users\Fletch\Desktop\Sessia\Coffe\ico.ico</icon>
   <jre>
     <path></path>
     <bundledJre64Bit>false</bundledJre64Bit>
@@ -23,4 +23,24 @@
     <jdkPreference>preferJre</jdkPreference>
     <runtimeBits>64/32</runtimeBits>
   </jre>
+  <splash>
+    <file>C:\Users\Fletch\Desktop\Sessia\Coffe\Mudilo.bmp</file>
+    <waitForWindow>true</waitForWindow>
+    <timeout>60</timeout>
+    <timeoutErr>true</timeoutErr>
+  </splash>
+  <versionInfo>
+    <fileVersion>0.1.9.0</fileVersion>
+    <txtFileVersion>0.1.9</txtFileVersion>
+    <fileDescription>Prepare your anus</fileDescription>
+    <copyright>OldTeaOwl</copyright>
+    <productVersion>0.1.9.0</productVersion>
+    <txtProductVersion>0.1.9</txtProductVersion>
+    <productName>Sessia</productName>
+    <companyName>OldTeaOwl</companyName>
+    <internalName>Sessia</internalName>
+    <originalFilename>Sessia.exe</originalFilename>
+    <trademarks></trademarks>
+    <language>ENGLISH_UK</language>
+  </versionInfo>
 </launch4jConfig>

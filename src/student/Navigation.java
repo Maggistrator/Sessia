@@ -41,7 +41,7 @@ public class Navigation {
     private static final JLabel blank = new JLabel();
 
     //public static void main(String[] args) {
-          public Navigation() {
+    public Navigation() {
         JPanel tools = new JPanel();
         tools.setBorder(new LineBorder(Color.black));
         tools.setBounds(320, 520, 200, 50);
@@ -64,7 +64,7 @@ public class Navigation {
         music = new Thread(new Runnable() {
             @Override
             public void run() {
-                 ms.playSound("D:/Coffe/Акт1.wav");
+                ms.playSound("D:/Coffe/Navigation.wav");
             }
         });
 
@@ -104,7 +104,7 @@ public class Navigation {
 
             @Override
             public void mousePressed(MouseEvent me) {
-             //   new Abilities();
+                //   new Abilities();
             }
 
             @Override
@@ -182,25 +182,26 @@ public class Navigation {
 
             @Override
             public void mousePressed(MouseEvent me) {
-                if (step == 1) {
+
+                if (step == 3) {
                     step++;
                     sciene.setVisible(false);
                     sciene.repaint();
-                    new Sciene1();
+                    System.exit(0);
                 }
 
                 if (step == 2) {
                     step++;
                     sciene.setVisible(false);
                     sciene.repaint();
-//             new Sciene1();
+                    System.exit(0);
                 }
 
-                if (step == 3) {
+                if (step == 1) {
                     step++;
                     sciene.setVisible(false);
                     sciene.repaint();
-//             new Sciene1();
+                    new Sciene1();
                 }
                 ms.interrupt();
             }

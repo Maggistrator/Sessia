@@ -29,18 +29,4 @@
     <timeout>60</timeout>
     <timeoutErr>true</timeoutErr>
   </splash>
-  <versionInfo>
-    <fileVersion>0.1.9.0</fileVersion>
-    <txtFileVersion>0.1.9</txtFileVersion>
-    <fileDescription>Prepare your anus</fileDescription>
-    <copyright>OldTeaOwl</copyright>
-    <productVersion>0.1.9.0</productVersion>
-    <txtProductVersion>0.1.9</txtProductVersion>
-    <productName>Sessia</productName>
-    <companyName>OldTeaOwl</companyName>
-    <internalName>Sessia</internalName>
-    <originalFilename>Sessia.exe</originalFilename>
-    <trademarks></trademarks>
-    <language>ENGLISH_UK</language>
-  </versionInfo>
 </launch4jConfig>

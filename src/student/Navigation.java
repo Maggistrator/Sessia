@@ -64,7 +64,7 @@ public class Navigation {
         music = new Thread(new Runnable() {
             @Override
             public void run() {
-                ms.playSound("D:/Coffe/Navigation.wav");
+                if(Menu.isMusicActive){ms.playSound("D:/Coffe/Navigation.wav");}
             }
         });
 
@@ -203,7 +203,7 @@ public class Navigation {
                     sciene.repaint();
                     new Sciene1();
                 }
-                ms.interrupt();
+                if(Menu.isMusicActive){ms.interrupt();}
             }
 
             @Override

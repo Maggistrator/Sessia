@@ -86,7 +86,7 @@ public class Sciene1 {
         music = new Thread(new Runnable() {
             @Override
             public void run() {
-                  ms.playSound("D:/Coffe/Акт1.wav");
+                  if(Menu.isMusicActive){ms.playSound("D:/Coffe/Акт1.wav");}
             }
         });
         time = new Timer(5000, new ActionListener() {
@@ -129,7 +129,7 @@ public class Sciene1 {
                 if (target.equals(smart)) {
                     int buffer = 4 + Navigation.smartness;
                     points += buffer;
-                    log.append("\nИспользуя свои офигительные знания, ты получаешь 5 баллов из 10");
+                    log.append("\nИспользуя свои офигительные знания, ты получаешь " + buffer + " баллов из 10");
                 }
                 if (target.equals(slyass)) {
                     int buffer = new Random().nextInt(5) + 1 + Navigation.slyass;
@@ -212,10 +212,13 @@ public class Sciene1 {
                     slyass.setText("Если я скажу 'да', мне поставят 3?");
                 }
                 if (step == 11) {
-                    ms.interrupt();
+                    if(Menu.isMusicActive){ms.interrupt();}
                     if (points < 50) {
+                        art.setVisible(true);
+                        art.setIcon(new ImageIcon("D:/Coffe/Кадр_10.png"));
                         JOptionPane.showMessageDialog(null, "Кхм.. Парень? Ты провалился.  \n(Лог:У тебя " + points + " баллов из 100,"
                                 + "\n а на 3 надо минимум 50. Мне жаль.)");
+                        Navigation.points--;
                     }
                     if (points >= 50 && points < 70) {
                         JOptionPane.showMessageDialog(null,"СДАААААААААЛ!");

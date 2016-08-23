@@ -23,8 +23,8 @@ public class Menu {
     static Timer time;
     static int next;
     static MakeSound ms = new MakeSound();
+    public static boolean isMusicActive = true;
 
-    
     public static void main(String[] args) {
         JFrame entry = new JFrame("Сессия: Месть Завуча");
         try {
@@ -52,7 +52,7 @@ public class Menu {
         Settings.setFont(new Font("Arial", Font.ITALIC, 10));
         Exit.setFont(new Font("Arial", Font.PLAIN, 16));
         text.setFont(new Font("Arial", Font.ITALIC, 16));
-                time = new Timer(2000, new ActionListener() {
+        time = new Timer(2000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 int a = new Random().nextInt(5);
@@ -101,7 +101,7 @@ public class Menu {
                         + "заглянули погонять очередную\n"
                         + "визуальную новеллу - приглашаю "
                         + "окунуться в самое пекло - в сессию.\n"
-                        + "Вам предстоит прости несколько уровней "
+                        + "Вам предстоит пройти несколько уровней "
                         + "дабы сдать, и выйти из этого ада победителем.\n"
                         + "Преподы могущественны, но с нами "
                         + "Халява, вперёд, студент, за раздолбайство и пофигизм!\n\n"
@@ -111,7 +111,14 @@ public class Menu {
         Settings.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                JOptionPane.showMessageDialog(null, "Какие настройки?О_о?");
+                //JOptionPane.showMessageDialog(null, "Какие настройки?О_о?");
+                int answer = JOptionPane.showConfirmDialog(null, "Включить беззвучный режим?");
+                if (answer == JOptionPane.YES_OPTION) {
+                    ms.interrupt();
+                    isMusicActive = false;
+                } else {
+                    JOptionPane.showMessageDialog(null, "Если что, я хз как его опять включить");
+                }
             }
         });
         start.addActionListener(new ActionListener() {
@@ -119,7 +126,9 @@ public class Menu {
             public void actionPerformed(ActionEvent ae) {
                 entry.setVisible(false);
                 entry.repaint();
-                ms.interrupt();
+                if (isMusicActive) {
+                    ms.interrupt();
+                }
                 new Prologue();
             }
         });

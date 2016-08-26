@@ -1,6 +1,7 @@
 package student;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -41,7 +42,8 @@ public class Sciene1 {
     static int points = 0;
 
     //public static void main(String[] args) {
-         public Sciene1() {
+    public Sciene1() {
+        log.setFont(new Font("Arial", Font.PLAIN, 12));
         log.setLineWrap(true);
         log.setWrapStyleWord(true);
         log.setEnabled(false);
@@ -86,7 +88,9 @@ public class Sciene1 {
         music = new Thread(new Runnable() {
             @Override
             public void run() {
-                  if(Menu.isMusicActive){ms.playSound("D:/Coffe/Акт1.wav");}
+                if (Menu.isMusicActive) {
+                    ms.playSound("D:/Coffe/Акт1.wav");
+                }
             }
         });
         time = new Timer(5000, new ActionListener() {
@@ -123,7 +127,7 @@ public class Sciene1 {
         target.setHorizontalAlignment(JLabel.CENTER);
         target.setVerticalAlignment(JLabel.CENTER);
         target.addMouseListener(new MouseAdapter() {
-        
+
             @Override
             public void mousePressed(MouseEvent me) {
                 if (target.equals(smart)) {
@@ -134,8 +138,12 @@ public class Sciene1 {
                 if (target.equals(slyass)) {
                     int buffer = new Random().nextInt(5) + 1 + Navigation.slyass;
                     points += buffer;
-                    if(buffer>=4){log.append("\nХех, хитрая задница! \nНа этот раз тебе перепало " + buffer + " баллов из 10!");}
-                    if(buffer<4){log.append("\nПровалилась она, твоя хитрожопость!\n " + buffer + " баллов из 10!");}
+                    if (buffer >= 4) {
+                        log.append("\nХех, хитрая задница! \nНа этот раз тебе перепало " + buffer + " баллов из 10!");
+                    }
+                    if (buffer < 4) {
+                        log.append("\nПровалилась она, твоя хитрожопость!\n " + buffer + " баллов из 10!");
+                    }
                 }
                 if (target.equals(lucky)) {
                     int buffer = new Random().nextInt(10);
@@ -212,23 +220,31 @@ public class Sciene1 {
                     slyass.setText("Если я скажу 'да', мне поставят 3?");
                 }
                 if (step == 11) {
-                    if(Menu.isMusicActive){ms.interrupt();}
+                    if (Menu.isMusicActive) {
+                        ms.interrupt();
+                    }
                     if (points < 50) {
+                        scrollPane.setVisible(false);
+                        pane.setVisible(false);
                         art.setVisible(true);
-                        art.setIcon(new ImageIcon("D:/Coffe/Кадр_10.png"));
+                        art.setIcon(new ImageIcon("D:/Coffe/Кадр10.png"));
                         JOptionPane.showMessageDialog(null, "Кхм.. Парень? Ты провалился.  \n(Лог:У тебя " + points + " баллов из 100,"
                                 + "\n а на 3 надо минимум 50. Мне жаль.)");
                         Navigation.points--;
                     }
                     if (points >= 50 && points < 70) {
-                        JOptionPane.showMessageDialog(null,"СДАААААААААЛ!");
+                        scrollPane.setVisible(false);
+                        pane.setVisible(false);
+                        art.setVisible(true);
+                        art.setIcon(new ImageIcon("D:/Coffe/Сдал.png"));
+                        JOptionPane.showMessageDialog(null, "СДАААААААААЛ!");
                         //арт про СДААААЛ!
                     }
                     if (points >= 70 && points < 90) {
-                        JOptionPane.showMessageDialog(null,"Да у тебя 4, парень!!! Это надо отметить! =)");
+                        JOptionPane.showMessageDialog(null, "Да у тебя 4, парень!!! Это надо отметить! =)");
                     }
                     if (points >= 90 && points < 100) {
-                        JOptionPane.showMessageDialog(null,"Чиииитер!!! У. Тебя. Грёбаная. 5-ка!!!");
+                        JOptionPane.showMessageDialog(null, "Чиииитер!!! У. Тебя. Грёбаная. 5-ка!!!");
                     }
                     sciene.setVisible(false);
                     sciene.repaint();

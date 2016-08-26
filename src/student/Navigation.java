@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.LineBorder;
 
 /**
@@ -42,6 +44,12 @@ public class Navigation {
 
     //public static void main(String[] args) {
     public Navigation() {
+//                try {
+//            UIManager.setLookAndFeel(new com.sun.java.swing.plaf.windows.WindowsLookAndFeel());
+//        } catch (UnsupportedLookAndFeelException e) {
+//            JOptionPane.showMessageDialog(null, "Error in a LaF of executable file");
+//        }
+
         JPanel tools = new JPanel();
         tools.setBorder(new LineBorder(Color.black));
         tools.setBounds(320, 520, 200, 50);
@@ -184,17 +192,15 @@ public class Navigation {
             public void mousePressed(MouseEvent me) {
 
                 if (step == 3) {
-                    step++;
                     sciene.setVisible(false);
                     sciene.repaint();
-                    System.exit(0);
                 }
 
                 if (step == 2) {
                     step++;
                     sciene.setVisible(false);
                     sciene.repaint();
-                    System.exit(0);
+                    new Sciene2();
                 }
 
                 if (step == 1) {

@@ -12,8 +12,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.LineBorder;
 
 /**
@@ -28,11 +26,13 @@ public class Navigation {
     public static int points = 1;
     private static final JLabel art = new JLabel(new ImageIcon("D:/Coffe/Меню Миссий.png"));
     static private Thread music;
+    static Thread runnable;
     private static final MakeSound ms = new MakeSound();
     private static boolean flag = true;
     private static boolean stop = true;
-    static private int step = 1;
+    static int step = 1;
     static Timer time;
+    static boolean done = false;
     private static final JFrame sciene = new JFrame();
     private static final JLabel russian = new JLabel(new ImageIcon("D:/Coffe/Русский.png"));
     private static final JLabel math = new JLabel(new ImageIcon("D:/Coffe/Матан.png"));
@@ -44,11 +44,6 @@ public class Navigation {
 
     //public static void main(String[] args) {
     public Navigation() {
-//                try {
-//            UIManager.setLookAndFeel(new com.sun.java.swing.plaf.windows.WindowsLookAndFeel());
-//        } catch (UnsupportedLookAndFeelException e) {
-//            JOptionPane.showMessageDialog(null, "Error in a LaF of executable file");
-//        }
 
         JPanel tools = new JPanel();
         tools.setBorder(new LineBorder(Color.black));
@@ -62,9 +57,6 @@ public class Navigation {
         blank.setBorder(new LineBorder(Color.black));
         help.setBorder(new LineBorder(Color.black));
         russian.setBounds(0, 300, 300, 300);
-        Navigation.addNewListener(russian);
-        Navigation.addNewListener(math);
-        Navigation.addNewListener(chemistry);
         art.setBounds(0, 0, 800, 600);
         russian.setBounds(5, 50, 170, 180);
         chemistry.setBounds(250, 110, 210, 240);
@@ -72,7 +64,9 @@ public class Navigation {
         music = new Thread(new Runnable() {
             @Override
             public void run() {
-                if(Menu.isMusicActive){ms.playSound("D:/Coffe/Navigation.wav");}
+                if (Menu.isMusicActive) {
+                    ms.playSound("D:/Coffe/Navigation.wav");
+                }
             }
         });
 
@@ -92,7 +86,13 @@ public class Navigation {
 
             @Override
             public void mousePressed(MouseEvent me) {
-                new Abilities();
+                runnable = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        new Abilities();
+                    }
+                });
+                runnable.run();
             }
 
             @Override
@@ -108,11 +108,117 @@ public class Navigation {
                 pointframe.setIcon(new ImageIcon("D:/Coffe/ИконкаУмения.png"));
             }
         });
+        russian.addMouseListener(new MouseAdapter() {
+
+            @Override
+            public void mousePressed(MouseEvent me) {
+                if(step>1){JOptionPane.showMessageDialog(null, "Ты уже сдал русский!");}
+                else{
+                sciene.setVisible(false);
+                sciene.repaint();
+                runnable = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        new Sciene1();
+                    }
+                });
+                runnable.run();
+                if (Menu.isMusicActive) {
+                    ms.interrupt();
+                }}
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent me) {
+                russian.setCursor(new Cursor(Cursor.HAND_CURSOR));
+                russian.setBorder(new LineBorder(Color.white));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent me) {
+                russian.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+                russian.setBorder(null);
+            }
+        });
+        math.addMouseListener(new MouseAdapter() {
+
+            @Override
+            public void mousePressed(MouseEvent me) {
+                if (step < 3){JOptionPane.showMessageDialog(null, "Сначала сдай химию и русский!");}
+                else if (step >3){JOptionPane.showMessageDialog(null, "Ура!!! Всё, сессия сдана, го пинать хуи!!!");}
+                else {
+                    sciene.setVisible(false);
+                    sciene.repaint();
+                    if (Menu.isMusicActive) {
+                        ms.interrupt();
+                    }
+                    runnable = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            new Sciene3();
+                        }
+                    });
+                    runnable.run();
+
+                } 
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent me) {
+                math.setCursor(new Cursor(Cursor.HAND_CURSOR));
+                math.setBorder(new LineBorder(Color.white));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent me) {
+                math.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+                math.setBorder(null);
+            }
+        });
+        chemistry.addMouseListener(new MouseAdapter() {
+
+            @Override
+            public void mousePressed(MouseEvent me) {
+                if (step < 2) {JOptionPane.showMessageDialog(null, "Сначала сдай русский!");}
+                else if(step>2){JOptionPane.showMessageDialog(null, "Ты уже сдал химию!");}
+                else{
+                    sciene.setVisible(false);
+                    sciene.repaint();
+                    if (Menu.isMusicActive) {
+                        ms.interrupt();
+                    }
+                    runnable = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            new Sciene2();
+                        }
+                    });
+                    runnable.run();
+                }
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent me) {
+                chemistry.setCursor(new Cursor(Cursor.HAND_CURSOR));
+                chemistry.setBorder(new LineBorder(Color.white));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent me) {
+                chemistry.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+                chemistry.setBorder(null);
+            }
+        });
         markbook.addMouseListener(new MouseAdapter() {
 
             @Override
             public void mousePressed(MouseEvent me) {
-                //   new Abilities();
+                Runnable runnable = new Runnable() {
+                    public void run() {
+                        new Markbook();
+                    }
+                };
+                runnable.run();
             }
 
             @Override
@@ -180,50 +286,20 @@ public class Navigation {
         sciene.setVisible(true);
     }
 
+    public static void playMusic() {
+        music = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (Menu.isMusicActive) {
+                    ms.playSound("D:/Coffe/Navigation.wav");
+                }
+            }
+        });
+        music.start();
+    }
+
     public static void show() {
         sciene.setVisible(true);
         sciene.repaint();
     }
-
-    private static void addNewListener(JLabel target) {
-        target.addMouseListener(new MouseAdapter() {
-
-            @Override
-            public void mousePressed(MouseEvent me) {
-
-                if (step == 3) {
-                    sciene.setVisible(false);
-                    sciene.repaint();
-                }
-
-                if (step == 2) {
-                    step++;
-                    sciene.setVisible(false);
-                    sciene.repaint();
-                    new Sciene2();
-                }
-
-                if (step == 1) {
-                    step++;
-                    sciene.setVisible(false);
-                    sciene.repaint();
-                    new Sciene1();
-                }
-                if(Menu.isMusicActive){ms.interrupt();}
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent me) {
-                target.setCursor(new Cursor(Cursor.HAND_CURSOR));
-                target.setBorder(new LineBorder(Color.white));
-            }
-
-            @Override
-            public void mouseExited(MouseEvent me) {
-                target.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-                target.setBorder(null);
-            }
-        });
-    }
-
 }

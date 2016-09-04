@@ -2,18 +2,18 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>C:\Users\Fletch\Desktop\Sessia\Student.jar</jar>
-  <outfile>C:\Users\Fletch\Desktop\Sessia\Sessia.exe</outfile>
+  <jar>D:\Sessia\Sessia.jar</jar>
+  <outfile>D:\Sessia\Sessia.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
   <priority>normal</priority>
   <downloadUrl>http://java.com/download</downloadUrl>
   <supportUrl></supportUrl>
-  <stayAlive>false</stayAlive>
+  <stayAlive>true</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon>C:\Users\Fletch\Desktop\Sessia\Coffe\ico.ico</icon>
+  <icon>D:\Sessia\Coffe\ico.ico</icon>
   <jre>
     <path></path>
     <bundledJre64Bit>false</bundledJre64Bit>
@@ -24,23 +24,21 @@
     <runtimeBits>64/32</runtimeBits>
   </jre>
   <splash>
-    <file>C:\Users\Fletch\Desktop\Sessia\Coffe\Mudilo.bmp</file>
+    <file>D:\Sessia\Coffe\Mudilo.bmp</file>
     <waitForWindow>true</waitForWindow>
     <timeout>60</timeout>
     <timeoutErr>true</timeoutErr>
   </splash>
   <versionInfo>
-    <fileVersion>0.6.0.0</fileVersion>
-    <txtFileVersion>0.6</txtFileVersion>
-    <fileDescription>Sessia is coming!</fileDescription>
+    <fileVersion>1.0.0.0</fileVersion>
+    <txtFileVersion>1.0</txtFileVersion>
+    <fileDescription>You will not pass!!!</fileDescription>
     <copyright>OldTeaOwl</copyright>
-    <productVersion>0.6.0.0</productVersion>
-    <txtProductVersion>0.6</txtProductVersion>
+    <productVersion>1.0.0.0</productVersion>
+    <txtProductVersion>1.0</txtProductVersion>
     <productName>Sessia</productName>
-    <companyName>OldTeaOwl</companyName>
+    <companyName>(c)OldTeaOwl</companyName>
     <internalName>Sessia</internalName>
     <originalFilename>Sessia.exe</originalFilename>
-    <trademarks></trademarks>
-    <language>ENGLISH_US</language>
   </versionInfo>
 </launch4jConfig>

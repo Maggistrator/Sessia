@@ -1,3 +1,4 @@
+
 package student;
 
 import java.awt.Color;
@@ -26,7 +27,7 @@ public class Menu {
     public static boolean isMusicActive = true;
 
     public static void main(String[] args) {
-        JFrame entry = new JFrame("Сессия: Месть Завуча");
+        final JFrame entry = new JFrame("Сессия: Месть Завуча");
         try {
             javax.swing.LookAndFeel alloyLnF = new com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel();
             UIManager.setLookAndFeel(alloyLnF);
@@ -35,7 +36,7 @@ public class Menu {
         }
 
         JLabel art = new JLabel(new ImageIcon("D:/Coffe/student.png"));
-        AnimatedLabel text = new AnimatedLabel(60);
+        final AnimatedLabel text = new AnimatedLabel(60);
         JButton start = new JButton("Начать");
         JButton about = new JButton("О разработчике");
         JButton Settings = new JButton("Настройки");

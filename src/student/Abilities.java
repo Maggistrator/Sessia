@@ -42,9 +42,10 @@ public class Abilities {
         abilities.setLocationRelativeTo(null);
         abilities.setLayout(null);
         abilities.setVisible(true);
+        abilities.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
-    private static void addNewListener(JLabel target) {
+    private static void addNewListener(final JLabel target) {
         target.addMouseListener(new MouseAdapter() {
 
             @Override

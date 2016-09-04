@@ -401,8 +401,18 @@ public class Sciene2 {
             sciene.setVisible(false);
             sciene.repaint();
             time.stop();
-            Navigation.points++;
-            new Navigation();
+            Sciene2.step = 1;
+            count = -1;
+            counter = 1;
+            rezult = 0;
+            if(Navigation.step==2){
+                    Navigation.points++;
+            Navigation.step++;
+            Markbook.passChemistry();
+            }
+           Navigation.show();
+            Navigation.playMusic();
+            Navigation.runnable.interrupt();
         }
     }
 

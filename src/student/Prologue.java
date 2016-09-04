@@ -32,7 +32,7 @@ public class Prologue {
 
     //public static void main(String[] args){
     public Prologue() {
-        JLabel skip = new JLabel(new ImageIcon("D:/Coffe/Skip.png"));
+        final JLabel skip = new JLabel(new ImageIcon("D:/Coffe/Skip.png"));
         skip.setBounds(740, 0, 50, 40);
         dialog.setBounds(100, 530, 600, 40);
         art.setBounds(0, 0, 800, 600);

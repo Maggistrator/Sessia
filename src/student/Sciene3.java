@@ -28,7 +28,7 @@ import javax.swing.event.ChangeListener;
 public class Sciene3 {
 
     static int step = 1;
-    static JLabel art = new JLabel(new ImageIcon("D:/Coffe/Акт3.png"));
+    static JLabel art = new JLabel(new ImageIcon("C:/Coffe/Акт3.png"));
     static Thread music;
     static Timer time;
     static Timer delay;
@@ -39,8 +39,8 @@ public class Sciene3 {
     static Timer animation2;
     static MakeSound ms = new MakeSound();
     static JFrame sciene = new JFrame();
-    static JLabel protagonist = new JLabel(new ImageIcon("D:/Coffe/Protagonist.png"));
-    static JLabel teacher = new JLabel(new ImageIcon("D:/Coffe/Teacher.png"));
+    static JLabel protagonist = new JLabel(new ImageIcon("C:/Coffe/Protagonist.png"));
+    static JLabel teacher = new JLabel(new ImageIcon("C:/Coffe/Teacher.png"));
     static JProgressBar progress = new JProgressBar(0, 200);
     static JProgressBar power = new JProgressBar(0, 100);
     static JLabel title = new JLabel("Level Progress");
@@ -150,9 +150,14 @@ public class Sciene3 {
                         Navigation.step++;
                         Markbook.passMath();
                     }
-                    Navigation.show();
-                    Navigation.playMusic();
                     Navigation.runnable.interrupt();
+                    
+                                Navigation.runnable = new Thread(new Runnable() {
+                    public void run() {
+                        new Viktory();
+                    }
+                });
+                Navigation.runnable.run();
                 }
             }
         });
@@ -303,7 +308,7 @@ public class Sciene3 {
             @Override
             public void run() {
                 if (Menu.isMusicActive) {
-                    ms.playSound("D:/Coffe/Акт3.wav");
+                    ms.playSound("C:/Coffe/Акт3.wav");
                 }
             }
         });
@@ -320,37 +325,37 @@ public class Sciene3 {
 
     static void dialog(int step) {
         if (step == 1) {
-            art.setIcon(new ImageIcon("D:/Coffe/Матан1.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Матан1.png"));
         }
         if (step == 2) {
-            art.setIcon(new ImageIcon("D:/Coffe/Матан2.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Матан2.png"));
         }
         if (step == 3) {
-            art.setIcon(new ImageIcon("D:/Coffe/Матан3.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Матан3.png"));
         }
         if (step == 4) {
-            art.setIcon(new ImageIcon("D:/Coffe/Матан4.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Матан4.png"));
         }
         if (step == 5) {
-            art.setIcon(new ImageIcon("D:/Coffe/Матан5.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Матан5.png"));
         }
         if (step == 6) {
-            art.setIcon(new ImageIcon("D:/Coffe/Матан6.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Матан6.png"));
         }
         if (step == 7) {
-            art.setIcon(new ImageIcon("D:/Coffe/Матан7.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Матан7.png"));
         }
         if (step == 8) {
-            art.setIcon(new ImageIcon("D:/Coffe/Матан8.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Матан8.png"));
         }
         if (step == 9) {
-            art.setIcon(new ImageIcon("D:/Coffe/Матан9.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Матан9.png"));
         }
         if (step == 10) {
-            art.setIcon(new ImageIcon("D:/Coffe/Матан10.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Матан10.png"));
         }
         if (step == 11) {
-            art.setIcon(new ImageIcon("D:/Coffe/Матан11.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Матан11.png"));
         }
 
         if (step == 12) {

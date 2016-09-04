@@ -23,9 +23,9 @@ public class Abilities {
 
 //    public static void main(String[] args) {
         public Abilities() {
-        smartness.setIcon(new ImageIcon("D:/Coffe/Ботанство" + Navigation.smartness + ".png"));
-        slyass.setIcon(new ImageIcon("D:/Coffe/Хитрожопость" + Navigation.slyass + ".png"));
-        luck.setIcon(new ImageIcon("D:/Coffe/Удача" + Navigation.luck + ".png"));
+        smartness.setIcon(new ImageIcon("C:/Coffe/Ботанство" + Navigation.smartness + ".png"));
+        slyass.setIcon(new ImageIcon("C:/Coffe/Хитрожопость" + Navigation.slyass + ".png"));
+        luck.setIcon(new ImageIcon("C:/Coffe/Удача" + Navigation.luck + ".png"));
         background.setIcon(new ImageIcon("D:/Coffe/Умения" + Navigation.points + ".png"));
         background.setBounds(0, 0, 300, 400);
         smartness.setBounds(0, 100, 300, 50);
@@ -53,18 +53,18 @@ public class Abilities {
                 if (Navigation.points > 0) {
                     if (target.equals(smartness)) {
                         Navigation.smartness++;
-                        smartness.setIcon(new ImageIcon("D:/Coffe/Ботанство" + Navigation.smartness + ".png"));
+                        smartness.setIcon(new ImageIcon("C:/Coffe/Ботанство" + Navigation.smartness + ".png"));
                     }
                     if (target.equals(slyass)) {
                         Navigation.slyass++;
-                        slyass.setIcon(new ImageIcon("D:/Coffe/Хитрожопость" + Navigation.slyass + ".png"));
+                        slyass.setIcon(new ImageIcon("C:/Coffe/Хитрожопость" + Navigation.slyass + ".png"));
                     }
                     if (target.equals(luck)) {
                         Navigation.luck++;
-                        luck.setIcon(new ImageIcon("D:/Coffe/Удача" + Navigation.luck + ".png"));
+                        luck.setIcon(new ImageIcon("C:/Coffe/Удача" + Navigation.luck + ".png"));
                     }
                     Navigation.points--;
-                    background.setIcon(new ImageIcon("D:/Coffe/Умения" + Navigation.points + ".png"));
+                    background.setIcon(new ImageIcon("C:/Coffe/Умения" + Navigation.points + ".png"));
                 }
             }
 

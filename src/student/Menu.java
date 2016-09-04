@@ -35,7 +35,7 @@ public class Menu {
             JOptionPane.showMessageDialog(null, "Error in a LaF of executable file");
         }
 
-        JLabel art = new JLabel(new ImageIcon("D:/Coffe/student.png"));
+        JLabel art = new JLabel(new ImageIcon("C:/Coffe/student.png"));
         final AnimatedLabel text = new AnimatedLabel(60);
         JButton start = new JButton("Начать");
         JButton about = new JButton("О разработчике");
@@ -149,7 +149,7 @@ public class Menu {
         entry.setLocationRelativeTo(null);
         entry.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         entry.setVisible(true);
-        ms.playSound("D:/Coffe/MainMenuTheam.wav");
+        ms.playSound("C:/Coffe/MainMenuTheam.wav");
     }
 
 }

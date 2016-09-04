@@ -24,7 +24,7 @@ public class Navigation {
     public static int slyass = 1;
     public static int luck = 1;
     public static int points = 1;
-    private static final JLabel art = new JLabel(new ImageIcon("D:/Coffe/Меню Миссий.png"));
+    private static final JLabel art = new JLabel(new ImageIcon("C:/Coffe/Меню Миссий.png"));
     static private Thread music;
     static Thread runnable;
     private static final MakeSound ms = new MakeSound();
@@ -34,12 +34,12 @@ public class Navigation {
     static Timer time;
     static boolean done = false;
     private static final JFrame sciene = new JFrame();
-    private static final JLabel russian = new JLabel(new ImageIcon("D:/Coffe/Русский.png"));
-    private static final JLabel math = new JLabel(new ImageIcon("D:/Coffe/Матан.png"));
-    private static final JLabel chemistry = new JLabel(new ImageIcon("D:/Coffe/Химия.png"));
-    private static final JLabel pointframe = new JLabel(new ImageIcon("D:/Coffe/ИконкаУмения.png"));
-    private static final JLabel markbook = new JLabel(new ImageIcon("D:/Coffe/ИконкаЗачётки.png"));
-    private static final JLabel help = new JLabel(new ImageIcon("D:/Coffe/ИконкаПомощи.png"));
+    private static final JLabel russian = new JLabel(new ImageIcon("C:/Coffe/Русский.png"));
+    private static final JLabel math = new JLabel(new ImageIcon("C:/Coffe/Матан.png"));
+    private static final JLabel chemistry = new JLabel(new ImageIcon("C:/Coffe/Химия.png"));
+    private static final JLabel pointframe = new JLabel(new ImageIcon("C:/Coffe/ИконкаУмения.png"));
+    private static final JLabel markbook = new JLabel(new ImageIcon("C:/Coffe/ИконкаЗачётки.png"));
+    private static final JLabel help = new JLabel(new ImageIcon("C:/Coffe/ИконкаПомощи.png"));
     private static final JLabel blank = new JLabel();
 
     //public static void main(String[] args) {
@@ -65,7 +65,7 @@ public class Navigation {
             @Override
             public void run() {
                 if (Menu.isMusicActive) {
-                    ms.playSound("D:/Coffe/Navigation.wav");
+                    ms.playSound("C:/Coffe/Navigation.wav");
                 }
             }
         });
@@ -74,9 +74,9 @@ public class Navigation {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 if (flag) {
-                    pointframe.setIcon(new ImageIcon("D:/Coffe/АктивнаяИконкаУмения.png"));
+                    pointframe.setIcon(new ImageIcon("C:/Coffe/АктивнаяИконкаУмения.png"));
                 } else {
-                    pointframe.setIcon(new ImageIcon("D:/Coffe/ИконкаУмения.png"));
+                    pointframe.setIcon(new ImageIcon("C:/Coffe/ИконкаУмения.png"));
                 }
                 flag = !flag;
             }
@@ -98,21 +98,21 @@ public class Navigation {
             @Override
             public void mouseEntered(MouseEvent me) {
                 pointframe.setCursor(new Cursor(Cursor.HAND_CURSOR));
-                pointframe.setIcon(new ImageIcon("D:/Coffe/АктивнаяИконкаУмения.png"));
+                pointframe.setIcon(new ImageIcon("C:/Coffe/АктивнаяИконкаУмения.png"));
                 time.stop();
             }
 
             @Override
             public void mouseExited(MouseEvent me) {
                 pointframe.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-                pointframe.setIcon(new ImageIcon("D:/Coffe/ИконкаУмения.png"));
+                pointframe.setIcon(new ImageIcon("C:/Coffe/ИконкаУмения.png"));
             }
         });
         russian.addMouseListener(new MouseAdapter() {
 
             @Override
             public void mousePressed(MouseEvent me) {
-                if(step>1){JOptionPane.showMessageDialog(null, "Ты уже сдал русский!");}
+                if(step>1){JOptionPane.showMessageDialog(null, "Экзамен по русскому уже прошёл!");}
                 else{
                 sciene.setVisible(false);
                 sciene.repaint();
@@ -180,7 +180,7 @@ public class Navigation {
             @Override
             public void mousePressed(MouseEvent me) {
                 if (step < 2) {JOptionPane.showMessageDialog(null, "Сначала сдай русский!");}
-                else if(step>2){JOptionPane.showMessageDialog(null, "Ты уже сдал химию!");}
+                else if(step>2){JOptionPane.showMessageDialog(null, "Экзамен по химии уже прошёл!");}
                 else{
                     sciene.setVisible(false);
                     sciene.repaint();
@@ -224,13 +224,13 @@ public class Navigation {
             @Override
             public void mouseEntered(MouseEvent me) {
                 markbook.setCursor(new Cursor(Cursor.HAND_CURSOR));
-                markbook.setIcon(new ImageIcon("D:/Coffe/АктивнаяИконкаЗачётки.png"));
+                markbook.setIcon(new ImageIcon("C:/Coffe/АктивнаяИконкаЗачётки.png"));
             }
 
             @Override
             public void mouseExited(MouseEvent me) {
                 markbook.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-                markbook.setIcon(new ImageIcon("D:/Coffe/ИконкаЗачётки.png"));
+                markbook.setIcon(new ImageIcon("C:/Coffe/ИконкаЗачётки.png"));
             }
         });
         help.addMouseListener(new MouseAdapter() {
@@ -258,13 +258,13 @@ public class Navigation {
             @Override
             public void mouseEntered(MouseEvent me) {
                 help.setCursor(new Cursor(Cursor.HAND_CURSOR));
-                help.setIcon(new ImageIcon("D:/Coffe/АктивнаяИконкаПомощи.png"));
+                help.setIcon(new ImageIcon("C:/Coffe/АктивнаяИконкаПомощи.png"));
             }
 
             @Override
             public void mouseExited(MouseEvent me) {
                 help.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-                help.setIcon(new ImageIcon("D:/Coffe/ИконкаПомощи.png"));
+                help.setIcon(new ImageIcon("C:/Coffe/ИконкаПомощи.png"));
             }
         });
         tools.setLayout(null);
@@ -291,7 +291,7 @@ public class Navigation {
             @Override
             public void run() {
                 if (Menu.isMusicActive) {
-                    ms.playSound("D:/Coffe/Navigation.wav");
+                    ms.playSound("C:/Coffe/Navigation.wav");
                 }
             }
         });

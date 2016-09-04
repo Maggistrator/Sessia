@@ -33,7 +33,7 @@ public class Sciene1 {
     transient static int step;
     transient static int anstep;
     transient static JLabel art = new JLabel();
-    transient static JLabel uchilka = new JLabel(new ImageIcon("D:/Coffe/MC Uchilka.png"));
+    transient static JLabel uchilka = new JLabel(new ImageIcon("C:/Coffe/MC Uchilka.png"));
     transient static Thread music;
     transient static Timer time;
     transient static MakeSound ms = new MakeSound();
@@ -45,7 +45,7 @@ public class Sciene1 {
         step = 1;
         points = 0;
         anstep = 1;
-        art.setIcon(new ImageIcon("D:/Coffe/Русский1.png"));
+        art.setIcon(new ImageIcon("C:/Coffe/Русский1.png"));
         smart.setText("Хм, Украiньску мову?");
         slyass.setText("Пфф! Вы смеётесь? Да этож все знают!(нет))");
         lucky.setText("<Халява приди!!!>");
@@ -177,7 +177,7 @@ public class Sciene1 {
             @Override
             public void run() {
                 if (Menu.isMusicActive) {
-                    ms.playSound("D:/Coffe/Акт1.wav");
+                    ms.playSound("C:/Coffe/Акт1.wav");
                 }
             }
         });
@@ -194,11 +194,11 @@ public class Sciene1 {
 
     static void dialog(int step) {
         if (anstep == 1) {
-            art.setIcon(new ImageIcon("D:/Coffe/Русский2.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Русский2.png"));
         }
 
         if (anstep == 2) {
-            art.setIcon(new ImageIcon("D:/Coffe/Русский3.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Русский3.png"));
         }
 
         if (anstep == 3) {
@@ -280,13 +280,13 @@ public class Sciene1 {
             pane.setVisible(false);
             art.setVisible(true);
             if (points < 50) {
-                art.setIcon(new ImageIcon("D:/Coffe/Кадр10.png"));
+                art.setIcon(new ImageIcon("C:/Coffe/Кадр10.png"));
                 JOptionPane.showMessageDialog(null, "Кхм.. Парень? Ты провалился.  \n(Лог:У тебя " + points + " баллов из 100,"
                         + "\n а на 3 надо минимум 50. Мне жаль.)");
                 Navigation.points--;
             }
             if (points >= 50 && points < 70) {
-                art.setIcon(new ImageIcon("D:/Coffe/Сдал.png"));
+                art.setIcon(new ImageIcon("C:/Coffe/Сдал.png"));
                 JOptionPane.showMessageDialog(null, "СДАААААААААЛ!");
                 //арт про СДААААЛ!
             }

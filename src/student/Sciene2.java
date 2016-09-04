@@ -26,14 +26,14 @@ public class Sciene2 {
 
     static int count = -1;
     static int step = 1;
-    static JLabel art = new JLabel(new ImageIcon("D:/Coffe/Акт2.png"));
+    static JLabel art = new JLabel(new ImageIcon("C:/Coffe/Акт2.png"));
     static Thread music;
     static Timer time;
     static MakeSound ms = new MakeSound();
     static int counter = 1;
     static boolean flag = true;
     static JFrame sciene = new JFrame();
-    static JLabel workbook = new JLabel(new ImageIcon("D:/Coffe/Лаба.png"));
+    static JLabel workbook = new JLabel(new ImageIcon("C:/Coffe/Лаба.png"));
     static JPanel pane = new JPanel();
     static JScrollPane scrollPane = new JScrollPane(pane);
     static JPanel actionPanel = new JPanel();
@@ -75,6 +75,7 @@ public class Sciene2 {
         sciene.add(borderpane);
         sciene.add(scrollPane);
         sciene.add(workbook);
+        sciene.add(art);
         sciene.add(art);
         sciene.setLayout(null);
         sciene.setSize(800, 600);
@@ -158,7 +159,7 @@ public class Sciene2 {
             @Override
             public void run() {
                 if (Menu.isMusicActive) {
-                    ms.playSound("D:/Coffe/Акт2.wav");
+                    ms.playSound("C:/Coffe/Акт2.wav");
                 }
             }
         });
@@ -175,41 +176,41 @@ public class Sciene2 {
 
     private static void dialog(int step) {
         if (step == 1) {
-            art.setIcon(new ImageIcon("D:/Coffe/Химия1.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Химия1.png"));
             time.setDelay(1000);
         }
 
         if (step == 2) {
-            art.setIcon(new ImageIcon("D:/Coffe/Химия1_2.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Химия1_2.png"));
             time.setDelay(4000);
         }
 
         if (step == 3) {
-            art.setIcon(new ImageIcon("D:/Coffe/Химия1_3.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Химия1_3.png"));
             time.setDelay(400);
         }
         if (step == 4) {
-            art.setIcon(new ImageIcon("D:/Coffe/Химия1_4.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Химия1_4.png"));
             time.setDelay(1000);
         }
         if (step == 5) {
-            art.setIcon(new ImageIcon("D:/Coffe/Химия1_5.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Химия1_5.png"));
         }
         if (step == 6) {
-            art.setIcon(new ImageIcon("D:/Coffe/Химия1_6.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Химия1_6.png"));
             time.setDelay(3000);
         }
         if (step == 7) {
-            art.setIcon(new ImageIcon("D:/Coffe/Химия1_7.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Химия1_7.png"));
         }
         if (step == 8) {
-            art.setIcon(new ImageIcon("D:/Coffe/Химия1_8.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Химия1_8.png"));
         }
         if (step == 9) {
-            art.setIcon(new ImageIcon("D:/Coffe/Химия1_9.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Химия1_9.png"));
         }
         if (step == 10) {
-            art.setIcon(new ImageIcon("D:/Coffe/Химия2.png"));
+            art.setIcon(new ImageIcon("C:/Coffe/Химия2.png"));
         }
 
         if (step == 11) {
@@ -380,7 +381,7 @@ public class Sciene2 {
         if (step == 28) {
             switch (rezult) {
                 case 3:
-                    art.setIcon(new ImageIcon("D:/Coffe/Сдал.png"));
+                    art.setIcon(new ImageIcon("C:/Coffe/Сдал.png"));
                     GenerateLabel("Зачёт!");
                     JOptionPane.showMessageDialog(null, "Зачёт!");
                     break;
@@ -418,7 +419,7 @@ public class Sciene2 {
 
     private static void GenerateLabel(String text) {
         count++;
-        ImageIcon ico = new ImageIcon("D:/Coffe/Химик.png");
+        ImageIcon ico = new ImageIcon("C:/Coffe/Химик.png");
         JLabel label = new JLabel();
         label.setFont(new Font("Comic Sans", Font.PLAIN, 9));
         label.setText(text);
@@ -434,11 +435,11 @@ public class Sciene2 {
         count++;
         ImageIcon ico = null;
         if (type == 1) {
-            ico = new ImageIcon("D:/Coffe/Химик.png");
+            ico = new ImageIcon("C:/Coffe/Химик.png");
         } else if (type == 2) {
-            ico = new ImageIcon("D:/Coffe/Студент.png");
+            ico = new ImageIcon("C:/Coffe/Студент.png");
         } else if (type == 3) {
-            ico = new ImageIcon("D:/Coffe/ЗнакЛабы.png");
+            ico = new ImageIcon("C:/Coffe/ЗнакЛабы.png");
         }
         JLabel label = new JLabel();
         label.setFont(new Font("Comic Sans", Font.PLAIN, 9));

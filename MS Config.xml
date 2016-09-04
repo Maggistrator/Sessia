@@ -2,18 +2,18 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>D:\Sessia\Sessia.jar</jar>
-  <outfile>D:\Sessia\Sessia.exe</outfile>
+  <jar>C:\Users\Денис\Desktop\Sessia\Sessia\Sessia.jar</jar>
+  <outfile>C:\Users\Денис\Desktop\Sessia\Sessia\Sessia.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
   <priority>normal</priority>
   <downloadUrl>http://java.com/download</downloadUrl>
   <supportUrl></supportUrl>
-  <stayAlive>true</stayAlive>
+  <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon>D:\Sessia\Coffe\ico.ico</icon>
+  <icon>C:\Users\Денис\Desktop\Sessia\Sessia\Coffe\ico.ico</icon>
   <jre>
     <path></path>
     <bundledJre64Bit>false</bundledJre64Bit>
@@ -24,20 +24,20 @@
     <runtimeBits>64/32</runtimeBits>
   </jre>
   <splash>
-    <file>D:\Sessia\Coffe\Mudilo.bmp</file>
+    <file>C:\Users\Денис\Desktop\Sessia\Sessia\Coffe\Mudilo.bmp</file>
     <waitForWindow>true</waitForWindow>
     <timeout>60</timeout>
     <timeoutErr>true</timeoutErr>
   </splash>
   <versionInfo>
-    <fileVersion>1.0.0.0</fileVersion>
-    <txtFileVersion>1.0</txtFileVersion>
+    <fileVersion>1.0.0.1</fileVersion>
+    <txtFileVersion>1.0.0.1</txtFileVersion>
     <fileDescription>You will not pass!!!</fileDescription>
     <copyright>OldTeaOwl</copyright>
-    <productVersion>1.0.0.0</productVersion>
-    <txtProductVersion>1.0</txtProductVersion>
+    <productVersion>1.0.0.1</productVersion>
+    <txtProductVersion>1.0.0.1</txtProductVersion>
     <productName>Sessia</productName>
-    <companyName>(c)OldTeaOwl</companyName>
+    <companyName>OldTeaOwl</companyName>
     <internalName>Sessia</internalName>
     <originalFilename>Sessia.exe</originalFilename>
   </versionInfo>
